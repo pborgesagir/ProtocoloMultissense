@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo de Utilização e Gestão de Riscos - Sala Multissensorial</title>
+
+    <link rel="icon" type="image/png" href="puzzle-favicon.png">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .symbol-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .falling-symbol {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        .falling-symbol svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        header, main, footer {
+            position: relative;
+            z-index: 1;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        header {
+            background-color: rgba(0, 123, 255, 0.9);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-logo {
+            max-height: 80px;
+            max-width: 90%;
+            margin-bottom: 15px;
+            border-radius: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #0056b3;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+
+        section ul li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c7254e;
+        }
+
+        .device-list {
+            column-count: 2;
+            column-gap: 20px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .device-list li {
+            background-color: #f8f9fa;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            display: inline-block;
+            width: 100%;
+            overflow-wrap: break-word;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border: 1px solid #ffeeba;
+            border-radius: 4px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #666;
+            background: rgba(244, 244, 244, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+        }
+         .center-text {
+            text-align: center;
+        }
+
+
+        @media (max-width: 600px) {
+            .device-list {
+                column-count: 1;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            section {
+                padding: 15px;
+            }
+            header, main, footer {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .header-logo {
+                max-height: 60px;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="symbol-container"></div>
+
+    <header>
+        <img src="logo.jpg" alt="Logo da Teia Agir" class="header-logo"> <h1>Protocolo de Utilização e Gestão de Riscos</h1>
+        <p>Sala Multissensorial - Teia Agir</p>
+    </header>
+
+    <main>
+        <section id="identificacao">
+            <h2>Identificação</h2>
+            <p>Este protocolo tem caráter informativo e orientativo, com o objetivo de regulamentar a utilização e promover a gestão de riscos nas salas multissensoriais.</p>
+            <p>A leitura atenta e completa deste documento é imprescindível antes do uso do espaço.</p>
+            <p>Caso surjam situações relevantes que não estejam contempladas neste documento, recomenda-se entrar em contato com o(a) supervisor(a) técnico(a) da unidade, para que seja avaliada a necessidade de atualização ou complementação do protocolo.</p>
+        </section>
+
+        <section id="diretrizes-gerais">
+            <h2>1. Diretrizes Gerais de Uso</h2>
+            <p>A sala multissensorial pode ser utilizada com os objetivos:</p>
+            <ul>
+                <li>I. exploratório: visando a oportunidade de experenciar os estímulos do ambiente de forma organizada;</li>
+                <li>II. terapêutico: objetivos traçados com efeitos imediatos ou em plano de ensino longitudinal.</li>
+            </ul>
+            <p>As intervenções podem ser feitas:</p>
+            <ul>
+                <li>Individuais, sendo um terapeuta para um aprendiz;</li>
+                <li>Em grupo, recomendado até 3 participantes, sendo necessário avaliar a compatibilidade das demandas em comum;</li>
+                <li>Em eventos, nesse caso, sem objetivos terapêuticos específicos, apenas exploratório.</li>
+            </ul>
+            <p>Recomenda-se que a utilização da sala multissensorial anteceda as demais terapias, atividades escolares ou atividades que exijam maior foco e atenção a ser desempenhada em outros ambientes.</p>
+            <p>É imprescindível que as intervenções sejam feitas de forma individualizada, levando em consideração a singularidade do sujeito, ainda que o aprendiz seja orientado a participar de atividade grupal.</p>
+        </section>
+
+        <section id="condutas-responsabilidades">
+            <h2>2. Condutas e Responsabilidades dos Profissionais</h2>
+            <p>O profissional deve atentar-se ao tom de roupa utilizada durante as intervenções, tendo em vista um espaço de estímulos múltiplos, sobretudo, visuais com utilização de luz UV.</p>
+            <p>Recomenda-se que sejam evitadas roupas brancas, já que o foco deve ser direcionado a outros espaços e recursos do ambiente. Opte por roupas escuras ou neutras.</p>
+            <p>É importante que estejam atentos aos estímulos dispostos no ambiente, não sendo recomendado a utilização de múltiplos estímulos, de forma simultânea.</p>
+            <p>Oriento que sejam registradas as reações de cada usuário, como estado emocional, interação com o profissional responsável, preferências aos materiais, comportamentos apresentados, sensações agradáveis e desagradáveis.</p>
+            <p>É de extrema importância que o profissional esteja sempre atento aos sinais do usuário e respeite o espaço necessário, para que a intervenção não seja invasiva em relação ao toque físico, efeitos sonoros, exposição visual e demais estímulos.</p>
+            <p>O profissional responsável deve possuir treinamento adequado em relação ao uso dos equipamentos, bem como repertório de raciocínio clínico dentro do esperado para utilização do ambiente, incluindo flexibilidade nas intervenções, controle de voz e aproximação física adequada.</p>
+        </section>
+
+        <section id="procedimentos-intervencoes-risco">
+            <h2>3. Procedimentos para Realização de Intervenções e Gestão de Risco</h2>
+            <p>Atente-se à disposição dos equipamentos na sala, para que sejam dispostos tatames, puffs, colchonetes ou similares, visando a proteção do usuário em caso de possíveis crises sensoriais, emocionais ou comportamentos interferentes.</p>
+            <p>Remova adornos como: brincos, colares e demais acessórios com o objetivo de manter a segurança do usuário.</p>
+            <p>Retire os sapatos vindos do ambiente externo, com o objetivo de manter a higienização do ambiente.</p>
+            <p>Os usuários com histórico de epilepsia devem evitar contato com luzes fortes, intermitentes e imagens projetadas com movimentação. Reduza também a utilização aos estímulos sonoros intensos.</p>
+            <p>No caso de crises em saúde mental ou episódios de depressão, recomenda-se a redução de estímulos visuais intensos e intermitentes, bem como evitar a utilização de cores escuras de forma intensa, assim como atenção aos estímulos sonoros intensos, evitando tons mais graves. Em proposta de relaxamento, realizar com instruções guiadas, evitando o esvaziamento mental completo.</p>
+            <p>Em caso de Transtorno de Déficit de Atenção e Hiperatividade: Evitar a utilização do ambiente livre e exploratório, assim como a hiperestimulação, como luzes brilhantes e fortes, sons intensos e tom de voz elevada.</p>
+        </section>
+
+        <section id="uso-equipamentos-tecnologicos">
+            <h2>4. Uso de Equipamentos e Recursos Tecnológicos</h2>
+            <p>É necessária a realização do treinamento de utilização dos equipamentos, bem como a testagem de todos os materiais no que antecede os atendimentos, como forma de adquirir fluência e familiaridade para o momento da intervenção.</p>
+            <p>Considerando a individualidade de cada usuário, torna-se necessário o pareamento de todas as possibilidades de estímulos em relação aos equipamentos tecnológicos, de forma individualizada.</p>
+            <p>Exemplo: Em uma sequência de atividades, observa-se a necessidade que reduzir apenas um estímulo dentre os demais, sendo assim, é dado o comando "desligar coluna de bolhas", sem que haja interferência nos demais estímulos utilizados no momento.</p>
+        </section>
+
+        <section id="consideracoes-finais">
+            <h2>Considerações Finais</h2>
+            <p>O cumprimento das orientações descritas neste protocolo é essencial para garantir a preservação do espaço, a segurança dos usuários e a eficácia das atividades realizadas.</p>
+            <p>Contamos com o comprometimento de todos para a manutenção de um ambiente funcional, acolhedor e seguro.</p>
+            <p>Dúvidas ou situações não previstas devem ser comunicadas à equipe técnica responsável.</p>
+            <p class="center-text">Data de emissão: maio de 2025.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Documento criado pela equipe técnica TEIA e DCOL Agir</p>
+        <p>© 2025 Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const symbolContainer = document.querySelector('.symbol-container');
+        const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'];
+
+        const svgCircle = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="${color}" stroke="#fff" stroke-width="3"/></svg>`;
+        const svgSquare = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="90" height="90" fill="${color}" stroke="#fff" stroke-width="3" rx="5" ry="5"/></svg>`;
+        const svgTriangle = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 95,95 5,95" fill="${color}" stroke="#fff" stroke-width="3"/></svg>`;
+
+        const shapes = [svgCircle, svgSquare, svgTriangle];
+        const numberOfSymbols = 70;
+
+        for (let i = 0; i < numberOfSymbols; i++) {
+            const symbol = document.createElement('div');
+            symbol.classList.add('falling-symbol');
+            symbol.style.left = Math.random() * 100 + 'vw';
+            symbol.style.animationDuration = Math.random() * 5 + 6 + 's';
+            symbol.style.animationDelay = Math.random() * 6 + 's';
+
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            const randomShapeFunction = shapes[Math.floor(Math.random() * shapes.length)];
+            symbol.innerHTML = randomShapeFunction(randomColor);
+
+            symbolContainer.appendChild(symbol);
+        }
+    </script>
+
+</body>
+</html>
