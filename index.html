@@ -80,17 +80,44 @@
             flex-direction: column;
             align-items: center;
         }
-
-        .header-logo {
-            max-height: 80px;
-            max-width: 90%;
-            margin-bottom: 15px;
-            border-radius: 15px;
+        
+        /* === ADDED LOGO STYLES === */
+        .logo-ensemble {
+            display: flex;
+            flex-direction: column; /* Stack logos vertically */
+            align-items: center;   /* Center logos horizontally in the stack */
+            gap: 15px;             /* Increased gap for the larger logo */
+            margin-bottom: 15px;   /* Space below the logos, before the H1 */
+            width: 100%;
         }
+
+        .clinic-logo-discreet { /* For logo.jpg */
+            max-height: 80px;      /* Original size */
+            max-width: 250px;      /* Set a generous max-width to allow scaling */
+            object-fit: contain;
+            border-radius: 15px;   /* Original radius */
+            order: 2;              /* Appears second (bottom) */
+        }
+
+        .main-slogan-logo { /* For 2-horizontal-slogan.png */
+            max-height: 60px;
+            max-width: 85%;
+            object-fit: contain;
+            border-radius: 8px;
+            order: 1; /* Appears first (top) */
+        }
+        /* === END ADDED LOGO STYLES === */
 
         header h1 {
             margin: 0;
             font-size: 2em;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 1.1em;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
         section {
@@ -171,8 +198,8 @@
             border-radius: 8px;
         }
          .center-text {
-            text-align: center;
-        }
+             text-align: center;
+         }
 
 
         @media (max-width: 600px) {
@@ -180,7 +207,10 @@
                 column-count: 1;
             }
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.5em; /* Adjusted size for long title */
+            }
+            header p {
+                font-size: 1em;
             }
             section {
                 padding: 15px;
@@ -189,10 +219,16 @@
                 margin-left: 10px;
                 margin-right: 10px;
             }
-            .header-logo {
-                max-height: 60px;
-                margin-bottom: 10px;
+            
+            /* === ADDED RESPONSIVE LOGO STYLES === */
+            .main-slogan-logo {
+                max-height: 50px; 
+                max-width: 90%; 
             }
+            .clinic-logo-discreet {
+                max-height: 60px; /* Original mobile size */
+            }
+            /* === END ADDED RESPONSIVE LOGO STYLES === */
         }
 
     </style>
@@ -202,7 +238,11 @@
     <div class="symbol-container"></div>
 
     <header>
-        <img src="logo.jpg" alt="Logo da Teia Agir" class="header-logo"> <h1>Protocolo de Utilização e Gestão de Riscos</h1>
+        <div class="logo-ensemble">
+            <img src="logo.jpg" alt="Logo da Clínica TEIA" class="clinic-logo-discreet">
+            <img src="2-horizontal-slogan.png" alt="Secretaria dos Direitos da Pessoa com Deficiência - São Paulo Governo do Estado" class="main-slogan-logo">
+        </div>
+        <h1>Protocolo de Utilização e Gestão de Riscos</h1>
         <p>Sala Multissensorial - Teia Agir</p>
     </header>
 
@@ -263,8 +303,7 @@
             <p>O cumprimento das orientações descritas neste protocolo é essencial para garantir a preservação do espaço, a segurança dos usuários e a eficácia das atividades realizadas.</p>
             <p>Contamos com o comprometimento de todos para a manutenção de um ambiente funcional, acolhedor e seguro.</p>
             <p>Dúvidas ou situações não previstas devem ser comunicadas à equipe técnica responsável.</p>
-<!--             <p class="center-text">Data de emissão: maio de 2025.</p> -->
-        </section>
+</section>
     </main>
 
     <footer>
